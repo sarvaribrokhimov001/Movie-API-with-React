@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import MovieList from './components/MovieList';
+import styles from '../src/App.css';
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
 
 const App = () => {
   const [name , setName] = useState("panda");
@@ -24,9 +27,40 @@ const App = () => {
 
     axios.get(`https://www.omdbapi.com/?s=${name}&apikey=c65fcde9`)
       .then((response) => {
-        setData(response?.data?.Search);
-      });
-    }
+          if (response.data.Response === "False") {
+            setData([]);
+            Toastify({
+              text: "Movie is not found ❌",
+              duration: 3500,
+              gravity: "top",
+              position: "center",
+              close: true,
+              style: {
+                background: "linear-gradient(to right, black, black)",
+                color: "red",
+                border: "1px solid red",
+                boxShadow: "0 0 12px rgba(255, 0, 0, 0.6)"
+              }
+            }).showToast();
+
+          } else {
+              setData(response.data.Search);
+              Toastify({
+                text: "Search muvaffaqiyatli amalga oshirildi 🥳",
+                duration: 3500,
+                gravity: "top",
+                position: "center",
+                close: true,
+                style: {
+                  background: "linear-gradient(to right, black, black)",
+                  color: "green",
+                  border: "1px solid green",
+                  boxShadow: "0 0 12px rgba(0, 255, 0, 0.6)"
+                }
+              }).showToast();
+            }
+        })
+      }
 
   return (
     <div>
@@ -35,6 +69,7 @@ const App = () => {
         <input className='input' type="search" placeholder='Search....' value={name} onChange={elName}/>
       </form>
       <MovieList Movies={data}/>
+      <showToast/>
     </div>
   );
 };

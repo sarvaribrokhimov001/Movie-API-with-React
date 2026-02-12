@@ -5,7 +5,7 @@ const MovieList = (props) => {
   const {Movies} = props;
 
   return (
-    <div>
+    <div className='cards'>
         {Movies?.length > 0 ? 
             Movies.map((item) => <MovieItem {...item}  key={item?.Title} />)
             
