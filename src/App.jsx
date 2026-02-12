@@ -68,7 +68,6 @@ const App = () => {
         <input className='input' type="search" placeholder='Search....' value={name} onChange={elName}/>
       </form>
       <MovieList Movies={data}/>
-      {/* <showToast/> */}
     </div>
   );
 };
