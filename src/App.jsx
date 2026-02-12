@@ -20,7 +20,6 @@ const App = () => {
   const elName = (e) => {
     setName(e?.target?.value);
   }
-  console.log(data);
 
   const elSearch = (e) => {
     e.preventDefault();
@@ -69,7 +68,7 @@ const App = () => {
         <input className='input' type="search" placeholder='Search....' value={name} onChange={elName}/>
       </form>
       <MovieList Movies={data}/>
-      <showToast/>
+      {/* <showToast/> */}
     </div>
   );
 };
