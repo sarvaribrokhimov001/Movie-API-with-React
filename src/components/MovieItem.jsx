@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const MovieItem = ({Poster , Year , Title , Type}) => {
   return (
@@ -8,6 +8,6 @@ const MovieItem = ({Poster , Year , Title , Type}) => {
         <p className='eltype'> Type: {Type} </p>
         <p className='elyear'> Year: {Year} </p>
      </div>
-  )
+  );
 }
 export default MovieItem

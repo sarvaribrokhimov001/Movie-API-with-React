@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MovieList from './components/MovieList';
-import styles from '../src/App.css';
+import '../src/App.css';
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
@@ -37,8 +37,9 @@ const App = () => {
               style: {
                 background: "linear-gradient(to right, black, black)",
                 color: "red",
-                border: "1px solid red",
-                boxShadow: "0 0 12px rgba(255, 0, 0, 0.6)"
+                border: "3px solid red",
+                boxShadow: "0 0 12px rgba(255, 0, 0, 0.6)",
+                fontWeight: "700"
               }
             }).showToast();
 
@@ -53,8 +54,9 @@ const App = () => {
                 style: {
                   background: "linear-gradient(to right, black, black)",
                   color: "green",
-                  border: "1px solid green",
-                  boxShadow: "0 0 12px rgba(0, 255, 0, 0.6)"
+                  border: "3px solid green",
+                  boxShadow: "0 0 12px rgba(0, 255, 0, 0.6)",
+                  fontWeight: "700"
                 }
               }).showToast();
             }

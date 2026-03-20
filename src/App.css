@@ -19,6 +19,7 @@
     color: red;
     padding: 0px 20px;
     font-size: 18px;
+    font-weight: 700;
     margin: auto;
     text-transform: capitalize;
 }
@@ -29,34 +30,38 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
-    margin: 25px 0px;
+    margin: 50px 0px;
 }
 
 .container {
-    width: 200px;
+    width: 250px;
     height: 400px;
     border-radius: 15px;
 }
 
 .input:focus {
     color: green;
+    background-color: black;
 }
 
 .eltitle {
     color: red;
     font-size: 25px;
+    margin-top: 15px;
 }
 
 .elyear {
     color: white;
+    font-weight: 700;
 }
 
 .poster {
-    width: 200px;
+    width: 240px;
     height: 270px;
     border-radius: 15px;
 }
 
 .eltype {
     color: green;
+    font-weight: 700;
 }
