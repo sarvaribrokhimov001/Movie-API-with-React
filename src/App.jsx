@@ -8,14 +8,14 @@ import "toastify-js/src/toastify.css";
 const App = () => {
   const [name , setName] = useState("panda");
   const [data , setData] = useState([]);
-  const api = `https://www.omdbapi.com/?s=panda&apikey=c65fcde9`; 
+  const api = `https://www.omdbapi.com/?s=${name}&apikey=c65fcde9`; 
 
 
   useEffect(() => {
     axios.get(api).then(data => {
       setData(data?.data?.Search);
     });
-  } , []);
+  } , [api]);
 
   const elName = (e) => {
     setName(e?.target?.value);
